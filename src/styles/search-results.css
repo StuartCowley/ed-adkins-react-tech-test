@@ -1,7 +1,15 @@
-.search-result {
+.search-results {
+}
+
+.search-result-cards {
   display: flex;
   flex-wrap: wrap;
-  width: 30rem;
-  padding: 10px 10px;
-  border-radius: 20px;
+  justify-content: center;
+}
+
+.search-result-card {
+  height: 300px;
+  width: 400px;
+  padding: 20px 20px;
+  border-radius: 30px;
 }

@@ -1,8 +1,12 @@
+.search-form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .image-search {
-  margin: auto;
-  width: 10rem;
-  height: 3rem;
-  border-radius: 11px;
   font-size: 20px;
-  padding: 0 10px;
+  border-radius: 11px;
+  height: 3em;
+  width: 20em;
 }
