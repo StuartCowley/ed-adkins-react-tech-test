@@ -1,12 +1,29 @@
 .search-form {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  width: 100%;
 }
 
 .image-search {
-  font-size: 20px;
-  border-radius: 11px;
   height: 3em;
   width: 20em;
+  background: #e7e7e7;
+  outline: none;
+  border: none;
+  border-radius: 1.625rem;
+  padding: 0 3.5rem 0 1.5rem;
+  font-size: 1rem;
+}
+
+.search-btn {
+  width: 3.5rem;
+  height: 2.8rem;
+  margin-left: -3.5rem;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.search-btn:hover {
+  cursor: pointer;
 }
