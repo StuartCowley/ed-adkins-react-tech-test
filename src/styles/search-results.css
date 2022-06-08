@@ -1,0 +1,7 @@
+.search-result {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30rem;
+  padding: 10px 10px;
+  border-radius: 20px;
+}
