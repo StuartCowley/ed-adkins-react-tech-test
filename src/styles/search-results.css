@@ -1,4 +1,10 @@
-.search-results {
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.no-results {
+  margin: auto;
+  padding-top: 50px;
+  font-family: "Lato", sans-serif;
+  font-size: 35px;
 }
 
 .search-result-cards {
