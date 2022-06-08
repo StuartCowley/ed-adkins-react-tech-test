@@ -7,7 +7,6 @@ const SearchResults = ({ results }) => {
   } else {
     return (
       <div className="search-results">
-        <p>Search Results</p>
         <div className="search-result-cards">
           {results.map((image) => (
             <img
