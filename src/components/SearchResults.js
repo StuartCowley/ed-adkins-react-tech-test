@@ -13,6 +13,7 @@ const SearchResults = ({ results }) => {
               className="search-result-card"
               src={image}
               alt="searchResult"
+              data-testid="search-result-card"
             />
           ))}
         </div>
