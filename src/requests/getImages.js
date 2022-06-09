@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const getImages = (query) => {
+const getImages = (query, page) => {
   if (!query) {
     return Promise.resolve([]);
   } else {
     return axios
-      .get(`https://images-api.nasa.gov/search?q=${query}`)
+      .get(`https://images-api.nasa.gov/search?q=${query}&page=${page}`)
       .then((response) => {
         const imageResults = response.data.collection.items;
         const parsedImages = imageResults.filter(

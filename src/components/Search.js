@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+// import PropTypes from "prop-types";
 import getImages from "../requests/getImages";
 import "../styles/search.css";
 
-const Search = ({ setSearchResults }) => {
-  const [value, setValue] = useState();
+const Search = ({ setSearchResults, page, setSearch, setLoading, search }) => {
+  // const [value, setValue] = useState();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setSearchResults(await getImages(value));
+    setSearchResults(await getImages(search, page));
+    setLoading(false);
   };
 
   return (
@@ -16,7 +17,7 @@ const Search = ({ setSearchResults }) => {
         <input
           className="image-search"
           type="text"
-          onChange={(event) => setValue(event.target.value)}
+          onChange={(event) => setSearch(event.target.value)}
         ></input>
         <button className="search-btn" type="submit">
           <svg viewBox="0 0 24 24">
@@ -32,3 +33,7 @@ const Search = ({ setSearchResults }) => {
 };
 
 export default Search;
+
+// Search.propTypes = {
+//   setSearchResults: PropTypes.string.isRequired,
+// };

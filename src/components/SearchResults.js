@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../styles/search-results.css";
 
 const SearchResults = ({ results }) => {
@@ -7,13 +8,13 @@ const SearchResults = ({ results }) => {
   } else {
     return (
       <div className="search-results">
-        <div className="search-result-cards">
-          {results.map((image) => (
+        <div className="search-result-cards" data-testid="search-result-cards">
+          {results.map((image, index) => (
             <img
+              key={index}
               className="search-result-card"
               src={image}
               alt="searchResult"
-              data-testid="search-result-card"
             />
           ))}
         </div>
@@ -23,3 +24,7 @@ const SearchResults = ({ results }) => {
 };
 
 export default SearchResults;
+
+// SearchResults.propTypes = {
+//   results: PropTypes.array.isRequired,
+// };
