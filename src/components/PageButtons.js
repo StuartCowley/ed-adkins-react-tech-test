@@ -1,11 +1,22 @@
 import { useState } from "react";
+import "../styles/page-buttons.css";
 
 const PageButtons = ({ page, setPage }) => {
   return (
-    <div className="buttonContainer">
-      <button onClick={() => setPage((prev) => prev - 1)}>Prev</button>
+    <div className="button-container">
+      <button
+        className="button-previous"
+        onClick={() => setPage((prev) => prev - 1)}
+      >
+        &laquo; Previous
+      </button>
       <p>{page}</p>
-      <button onClick={() => setPage((prev) => prev + 1)}>Next</button>
+      <button
+        className="button-next"
+        onClick={() => setPage((prev) => prev + 1)}
+      >
+        Next &raquo;
+      </button>
     </div>
   );
 };

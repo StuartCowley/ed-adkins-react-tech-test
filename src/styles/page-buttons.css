@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: "Lato", sans-serif;
+  padding: 20px 20px;
+}
+
+.button-container > p {
+  font-size: 1.5rem;
+  padding: 0 2rem;
+}
+
+.button-container > button {
+  font-family: "Lato", sans-serif;
+  font-size: 1.5rem;
+  border-radius: 30px;
+  width: 10rem;
+}
+
+.button-container > button:hover {
+  background-color: lightgrey;
+}
+
+.button-next {
+  background-color: #cf0031;
+}
