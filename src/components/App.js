@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search";
 import SearchResults from "./SearchResults";
 import PageButtons from "./PageButtons";
+import LoadSpinner from "./LoadSpinner";
 import getImages from "../requests/getImages";
 import "../styles/app.css";
 
@@ -9,13 +10,14 @@ const App = () => {
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const handlePageChange = async () => {
     setSearchResults(await getImages(search, page));
   };
 
   useEffect(() => {
+    setLoading(true);
     setSearchResults(handlePageChange());
     setLoading(false);
   }, [page]);
@@ -31,10 +33,10 @@ const App = () => {
         setSearchResults={setSearchResults}
         search={search}
         setSearch={setSearch}
-        setLoading={setLoading}
         page={page}
+        setLoading={setLoading}
       />
-      {!loading && <SearchResults results={searchResults} />}
+      {loading ? <LoadSpinner /> : <SearchResults results={searchResults} />}
       <PageButtons page={page} setPage={setPage} />
     </div>
   );

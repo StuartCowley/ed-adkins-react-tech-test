@@ -1,0 +1,11 @@
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  padding: 10rem;
+}
+
+.moon-loader {
+  display: "block";
+  margin: "0 auto";
+  border-color: "red";
+}

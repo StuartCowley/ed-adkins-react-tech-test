@@ -6,6 +6,7 @@ const Search = ({ setSearchResults, page, setSearch, setLoading, search }) => {
   // const [value, setValue] = useState();
 
   const handleSubmit = async (event) => {
+    setLoading(true);
     event.preventDefault();
     setSearchResults(await getImages(search, page));
     setLoading(false);
