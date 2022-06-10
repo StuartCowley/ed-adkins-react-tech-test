@@ -37,7 +37,9 @@ const App = () => {
         setLoading={setLoading}
       />
       {loading ? <LoadSpinner /> : <SearchResults results={searchResults} />}
-      <PageButtons page={page} setPage={setPage} />
+      {searchResults.length !== 0 && (
+        <PageButtons page={page} setPage={setPage} />
+      )}
     </div>
   );
 };
