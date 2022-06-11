@@ -8,15 +8,15 @@ describe("SearchResults", () => {
     "https://images-assets.nasa.gov/image/PIA00126/PIA00126~thumb.jpg",
   ];
 
-  const { asFragment } = render(<SearchResults />);
+  const { asFragment } = render(<SearchResults results={images} />);
 
   it("renders correctly", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it("renders the correct number of ForecastSummary instances", () => {
+  it("renders the correct number of SearchResults instances", () => {
     const { getAllByTestId } = render(<SearchResults results={images} />);
 
-    expect(getAllByTestId("search-result-card")).toHaveLength(2);
+    expect(getAllByTestId("search-result-cards")).toBeInTheDocument();
   });
 });
