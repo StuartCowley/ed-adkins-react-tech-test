@@ -1,17 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import LoadSpinner from "./LoadSpinner";
+
 import "../styles/search-results.css";
 
-const SearchResults = ({ results }) => {
-  if (!results.length) {
-    return <p className="no-results">No results.</p>;
-  } else {
-    return (
+const SearchResults = ({ results, loading, setLoading }) => {
+  if (!results.length) return;
+
+  const onComplete = () => {
+    setLoading(false);
+    console.log("loaded");
+  };
+
+  return (
+    <>
+      <div>{loading && <LoadSpinner />}</div>
+
       <div className="search-results">
         <div className="search-result-cards" data-testid="search-result-cards">
           {results.map((image, index) => (
             <img
               key={index}
+              onLoad={onComplete}
               className="search-result-card"
               src={image}
               alt="searchResult"
@@ -19,8 +29,8 @@ const SearchResults = ({ results }) => {
           ))}
         </div>
       </div>
-    );
-  }
+    </>
+  );
 };
 
 export default SearchResults;

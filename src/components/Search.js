@@ -2,14 +2,10 @@
 import getImages from "../requests/getImages";
 import "../styles/search.css";
 
-const Search = ({ setSearchResults, page, setSearch, setLoading, search }) => {
-  // const [value, setValue] = useState();
-
+const Search = ({ setSearchResults, page, setSearch, search }) => {
   const handleSubmit = async (event) => {
-    setLoading(true);
     event.preventDefault();
     setSearchResults(await getImages(search, page));
-    setLoading(false);
   };
 
   return (

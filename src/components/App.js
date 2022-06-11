@@ -10,7 +10,7 @@ const App = () => {
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const handlePageChange = async () => {
     setSearchResults(await getImages(search, page));
@@ -19,7 +19,6 @@ const App = () => {
   useEffect(() => {
     setLoading(true);
     setSearchResults(handlePageChange());
-    setLoading(false);
   }, [page]);
 
   return (
@@ -34,10 +33,13 @@ const App = () => {
         search={search}
         setSearch={setSearch}
         page={page}
+      />
+      <SearchResults
+        results={searchResults}
+        loading={loading}
         setLoading={setLoading}
       />
-      {loading ? <LoadSpinner /> : <SearchResults results={searchResults} />}
-      {searchResults.length !== 0 && (
+      {searchResults.length !== 0 && !loading && (
         <PageButtons page={page} setPage={setPage} />
       )}
     </div>
