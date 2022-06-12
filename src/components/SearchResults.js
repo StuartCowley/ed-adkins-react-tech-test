@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import LoadSpinner from "./LoadSpinner";
+import ImageThumbnail from "./ImageThumnail";
 
 import "../styles/search-results.css";
 
 const SearchResults = ({ results, loading, setLoading }) => {
   if (!results.length) return;
-  console.log(results);
-  const onComplete = () => {
-    setLoading(false);
-    console.log("loaded");
-  };
 
   return (
     <>
@@ -18,14 +14,8 @@ const SearchResults = ({ results, loading, setLoading }) => {
 
       <div className="search-results">
         <div className="search-result-cards" data-testid="search-result-cards">
-          {results.map((image, index) => (
-            <img
-              key={index}
-              onLoad={onComplete}
-              className="search-result-card"
-              src={image}
-              alt="searchResult"
-            />
+          {results.map((image) => (
+            <ImageThumbnail image={image} setLoading={setLoading} />
           ))}
         </div>
       </div>
@@ -35,8 +25,8 @@ const SearchResults = ({ results, loading, setLoading }) => {
 
 export default SearchResults;
 
-SearchResults.propTypes = {
-  results: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired,
-  setLoading: PropTypes.func.isRequired,
-};
+// SearchResults.propTypes = {
+//   results: PropTypes.array.isRequired,
+//   loading: PropTypes.bool.isRequired,
+//   setLoading: PropTypes.func.isRequired,
+// };
