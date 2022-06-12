@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search";
 import SearchResults from "./SearchResults";
 import PageButtons from "./PageButtons";
-import LoadSpinner from "./LoadSpinner";
 import getImages from "../requests/getImages";
 import "../styles/app.css";
 
@@ -18,6 +17,7 @@ const App = () => {
 
   useEffect(() => {
     setLoading(true);
+    window.scrollTo(0, 0);
     setSearchResults(handlePageChange());
   }, [page]);
 

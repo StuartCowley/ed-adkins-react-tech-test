@@ -6,7 +6,7 @@ import "../styles/search-results.css";
 
 const SearchResults = ({ results, loading, setLoading }) => {
   if (!results.length) return;
-
+  console.log(results);
   const onComplete = () => {
     setLoading(false);
     console.log("loaded");
@@ -35,6 +35,8 @@ const SearchResults = ({ results, loading, setLoading }) => {
 
 export default SearchResults;
 
-// SearchResults.propTypes = {
-//   results: PropTypes.array.isRequired,
-// };
+SearchResults.propTypes = {
+  results: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
+  setLoading: PropTypes.func.isRequired,
+};

@@ -9,6 +9,7 @@ const PageButtons = ({ page, setPage }) => {
         onClick={() => {
           setPage((prev) => prev - 1);
         }}
+        disabled={page <= 1}
       >
         &laquo; Previous
       </button>

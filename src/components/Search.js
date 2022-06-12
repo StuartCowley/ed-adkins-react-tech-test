@@ -1,4 +1,4 @@
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import getImages from "../requests/getImages";
 import "../styles/search.css";
 
@@ -31,6 +31,9 @@ const Search = ({ setSearchResults, page, setSearch, search }) => {
 
 export default Search;
 
-// Search.propTypes = {
-//   setSearchResults: PropTypes.string.isRequired,
-// };
+Search.propTypes = {
+  setSearchResults: PropTypes.func.isRequired,
+  page: PropTypes.number.isRequired,
+  setSearch: PropTypes.func.isRequired,
+  search: PropTypes.string.isRequired,
+};
