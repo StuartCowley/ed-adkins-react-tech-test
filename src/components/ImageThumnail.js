@@ -5,7 +5,6 @@ const ImageThumbnail = ({ image, setLoading }) => {
 
   const onComplete = () => {
     setLoading(false);
-    console.log("loaded");
   };
 
   return (
@@ -15,13 +14,17 @@ const ImageThumbnail = ({ image, setLoading }) => {
       onMouseOut={() => setIsHovered(false)}
     >
       <img
-        key={image}
+        key={image[0]}
         onLoad={onComplete}
         className="search-result-image"
         src={image[0]}
         alt="searchResult"
       />
-      {isHovered && <div className="search-result-description">{image[1]}</div>}
+      {isHovered && (
+        <div className="search-result-description" key={image[1]}>
+          {image[1]}
+        </div>
+      )}
     </div>
   );
 };

@@ -15,7 +15,6 @@ const getImages = (query, page) => {
           image.links[0].href,
           image.data[0].title,
         ]);
-        console.log(images);
         return images;
       })
       .catch((err) => {

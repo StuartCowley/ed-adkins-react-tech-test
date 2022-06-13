@@ -25,8 +25,8 @@ const SearchResults = ({ results, loading, setLoading }) => {
 
 export default SearchResults;
 
-// SearchResults.propTypes = {
-//   results: PropTypes.array.isRequired,
-//   loading: PropTypes.bool.isRequired,
-//   setLoading: PropTypes.func.isRequired,
-// };
+SearchResults.propTypes = {
+  results: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
+  setLoading: PropTypes.func.isRequired,
+};
