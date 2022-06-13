@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import LoadSpinner from "./LoadSpinner";
 import ImageThumbnail from "./ImageThumnail";
@@ -6,7 +6,6 @@ import ImageThumbnail from "./ImageThumnail";
 import "../styles/search-results.css";
 
 const SearchResults = ({ results, loading, setLoading }) => {
-  console.log(typeof results);
   if (!results.length) return;
 
   return (
@@ -27,10 +26,10 @@ const SearchResults = ({ results, loading, setLoading }) => {
 export default SearchResults;
 
 SearchResults.propTypes = {
-  results: PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  }),
+  // results: PropTypes.shape({
+  //   url: PropTypes.string,
+  //   title: PropTypes.string,
+  // }),
   // results: PropTypes.arrayOf(
   //   PropTypes.shape({
   //     url: PropTypes.string.isRequired,
