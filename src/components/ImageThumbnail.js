@@ -11,6 +11,7 @@ const ImageThumbnail = ({ image, setLoading }) => {
   return (
     <div
       className="search-result-card"
+      data-testid="search-result-card"
       onMouseOver={() => setIsHovered(true)}
       onMouseOut={() => setIsHovered(false)}
     >

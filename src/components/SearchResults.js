@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import LoadSpinner from "./LoadSpinner";
-import ImageThumbnail from "./ImageThumnail";
+import ImageThumbnail from "./ImageThumbnail";
 
 import "../styles/search-results.css";
 
