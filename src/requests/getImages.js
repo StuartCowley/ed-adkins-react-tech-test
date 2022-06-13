@@ -11,10 +11,10 @@ const getImages = (query, page) => {
         const parsedImages = imageResults.filter(
           (image) => image.data[0].media_type === "image"
         );
-        const images = parsedImages.map((image) => [
-          image.links[0].href,
-          image.data[0].title,
-        ]);
+        const images = parsedImages.map((image) => ({
+          url: image.links[0].href,
+          title: image.data[0].title,
+        }));
         return images;
       })
       .catch((err) => {
