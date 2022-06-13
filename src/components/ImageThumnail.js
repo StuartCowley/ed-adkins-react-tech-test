@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 const ImageThumbnail = ({ image, setLoading }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -14,15 +15,15 @@ const ImageThumbnail = ({ image, setLoading }) => {
       onMouseOut={() => setIsHovered(false)}
     >
       <img
-        key={image[0]}
+        key={image.url}
         onLoad={onComplete}
         className="search-result-image"
-        src={image[0]}
+        src={image.url}
         alt="searchResult"
       />
       {isHovered && (
-        <div className="search-result-description" key={image[1]}>
-          {image[1]}
+        <div className="search-result-description" key={image.title}>
+          {image.title}
         </div>
       )}
     </div>
@@ -30,3 +31,11 @@ const ImageThumbnail = ({ image, setLoading }) => {
 };
 
 export default ImageThumbnail;
+
+ImageThumbnail.propTypes = {
+  image: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
+  setLoading: PropTypes.func.isRequired,
+};

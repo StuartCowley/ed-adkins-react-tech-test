@@ -1,4 +1,4 @@
-import { useState } from "react";
+import PropTypes from "prop-types";
 import "../styles/page-buttons.css";
 
 const PageButtons = ({ page, setPage }) => {
@@ -27,3 +27,8 @@ const PageButtons = ({ page, setPage }) => {
 };
 
 export default PageButtons;
+
+PageButtons.propTypes = {
+  page: PropTypes.number.isRequired,
+  setPage: PropTypes.func.isRequired,
+};

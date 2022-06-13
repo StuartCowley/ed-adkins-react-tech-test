@@ -6,6 +6,7 @@ import ImageThumbnail from "./ImageThumnail";
 import "../styles/search-results.css";
 
 const SearchResults = ({ results, loading, setLoading }) => {
+  console.log(typeof results);
   if (!results.length) return;
 
   return (
@@ -14,8 +15,8 @@ const SearchResults = ({ results, loading, setLoading }) => {
 
       <div className="search-results">
         <div className="search-result-cards" data-testid="search-result-cards">
-          {results.map((image) => (
-            <ImageThumbnail image={image} setLoading={setLoading} />
+          {results.map((image, index) => (
+            <ImageThumbnail key={index} image={image} setLoading={setLoading} />
           ))}
         </div>
       </div>
@@ -26,7 +27,16 @@ const SearchResults = ({ results, loading, setLoading }) => {
 export default SearchResults;
 
 SearchResults.propTypes = {
-  results: PropTypes.array.isRequired,
+  results: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
+  // results: PropTypes.arrayOf(
+  //   PropTypes.shape({
+  //     url: PropTypes.string.isRequired,
+  //     title: PropTypes.string.isRequired,
+  //   })
+  // ),
   loading: PropTypes.bool.isRequired,
   setLoading: PropTypes.func.isRequired,
 };
