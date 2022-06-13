@@ -13,7 +13,7 @@ const PageButtons = ({ page, setPage }) => {
       >
         &laquo; Previous
       </button>
-      <p>{page}</p>
+      <p className="page-number">{page}</p>
       <button
         className="button-next"
         onClick={() => {
