@@ -31,8 +31,6 @@ describe("Search", () => {
         page={validProps.page}
       />
     );
-    // eslint-disable-next-line testing-library/no-debugging-utils
-    // screen.debug();
     const buttons = screen.getAllByRole("button");
     expect(buttons).toHaveLength(1);
   });
