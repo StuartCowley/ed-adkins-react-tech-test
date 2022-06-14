@@ -33,6 +33,7 @@ const App = () => {
         search={search}
         setSearch={setSearch}
         page={page}
+        setPage={setPage}
       />
       <SearchResults
         results={searchResults}
