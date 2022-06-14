@@ -2,11 +2,19 @@ import PropTypes from "prop-types";
 import getImages from "../requests/getImages";
 import "../styles/search.css";
 
-const Search = ({ setSearchResults, page, setPage, setSearch, search }) => {
+const Search = ({
+  setSearchResults,
+  page,
+  setPage,
+  setSearch,
+  search,
+  setLoading,
+}) => {
   const handleSubmit = async (event) => {
     setPage(1);
     event.preventDefault();
     setSearchResults(await getImages(search, page));
+    setLoading(true);
   };
 
   return (
