@@ -2,8 +2,9 @@ import PropTypes from "prop-types";
 import getImages from "../requests/getImages";
 import "../styles/search.css";
 
-const Search = ({ setSearchResults, page, setSearch, search }) => {
+const Search = ({ setSearchResults, page, setPage, setSearch, search }) => {
   const handleSubmit = async (event) => {
+    setPage(1);
     event.preventDefault();
     setSearchResults(await getImages(search, page));
   };
@@ -34,6 +35,7 @@ export default Search;
 Search.propTypes = {
   setSearchResults: PropTypes.func.isRequired,
   page: PropTypes.number.isRequired,
+  setPage: PropTypes.func.isRequired,
   setSearch: PropTypes.func.isRequired,
   search: PropTypes.string.isRequired,
 };
