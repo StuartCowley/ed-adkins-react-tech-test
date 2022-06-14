@@ -34,6 +34,7 @@ const App = () => {
         setSearch={setSearch}
         page={page}
         setPage={setPage}
+        setLoading={setLoading}
       />
       <SearchResults
         results={searchResults}
